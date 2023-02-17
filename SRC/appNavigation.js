@@ -21,6 +21,7 @@ import Walkthrough from './Screens/Walkthrough';
 import EnterPhone from './Screens/EnterPhone';
 import VerifyNumber from './Screens/VerifyNumber';
 import ResetPassword from './Screens/ResetPassword';
+import HomeScreen from './Screens/HomeScreen';
 
 const AppNavigator = () => {
   // const isLogin = false;

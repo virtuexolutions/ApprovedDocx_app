@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
         width : windowWidth ,
         flexDirection : 'row' ,
         justifyContent : 'space-between',
-        paddingHorizontal : moderateScale(20,0.3)
-      , paddingTop : moderateScale(10,0.3),
+        paddingHorizontal : moderateScale(25,0.3)
+      , paddingTop : moderateScale(20,0.3),
       }})

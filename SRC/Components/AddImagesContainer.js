@@ -23,20 +23,20 @@ const AddImagesContainer = ({multiImages , setMultiImages , style}) => {
     <View style={styles.imagesContainer}>
         {multiImages?.length > 0 &&
     <FlatList
-    horizontal
+    // horizontal
     data={multiImages}
     showsHorizontalScrollIndicator={false}
     style={{
         // width : windowWidth * 0.95 ,
         // backgroundColor : Color.white,
-        minHeight : windowHeight * 0.7
-      // backgroundColor : 'red',
+        minHeight : windowHeight * 0.7,
+      backgroundColor : 'red',
     //   flexGrow : 0
     }}
     renderItem={({item , index}) => {
     
       return(
-        <View style={[styles.addImageContainer,{borderWidth : 0 , borderRadius : moderateScale(10,0.3)} , style]}>
+        <View style={[styles.addImageContainer , style]}>
         <Icon
         name={'close'}
         as={FontAwesome}
@@ -77,7 +77,7 @@ const AddImagesContainer = ({multiImages , setMultiImages , style}) => {
     />
 }
 
-    <TouchableOpacity style={styles.addImageContainer}>
+    {/* <TouchableOpacity style={styles.addImageContainer}>
       <Icon
       name={'plus'}
       as={AntDesign}
@@ -88,7 +88,7 @@ const AddImagesContainer = ({multiImages , setMultiImages , style}) => {
       }}
     
       />
-    </TouchableOpacity>
+    </TouchableOpacity> */}
     <ImagePickerModal
           show={showMultiImageModal}
           setShow={setShowMultiImageModal}
@@ -123,12 +123,12 @@ export default AddImagesContainer
 
 const styles = ScaledSheet.create({
     addImageContainer : {
-        width : windowWidth * 0.2 ,
+        width : windowWidth * 0.33 ,
         backgroundColor : Color.white,
-        borderRadius : moderateScale(5,0.3),
-        borderWidth : 2,
-        borderColor : Color.themeColorLight,
-        height : windowHeight * 0.1,
+        // borderRadius : moderateScale(5,0.3),
+        // borderWidth : 2,
+        // borderColor : Color.themeColorLight,
+        height : windowHeight * 0.15,
         justifyContent : 'center',
         alignItems : 'center',
         marginRight : moderateScale(10,0.3),
@@ -142,16 +142,17 @@ const styles = ScaledSheet.create({
         shadowRadius: 5.46,
         
         elevation: 9,
-        overflow : 'hidden'
+        overflow : 'hidden',
       },
       imagesContainer : {
-        paddingHorizontal : moderateScale(20,0.3),
+        // paddingHorizontal : moderateScale(20,0.3),
         // marginTop : moderateScale(10,0.3),
         width : windowWidth ,
         alignSelf : 'center',
         backgroundColor : 'white',
         flexDirection : 'row',
-        minHeight : windowHeight * 0.7
+        minHeight : windowHeight * 0.7,
+        flexWrap : 'wrap',
     
       },
 })
