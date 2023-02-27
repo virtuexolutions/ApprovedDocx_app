@@ -13,11 +13,27 @@ import {TouchableOpacity} from 'react-native';
 import {Icon} from 'native-base';
 import CustomButton from '../Components/CustomButton';
 import AddImagesContainer from '../Components/AddImagesContainer';
+import ImagePickerModal from '../Components/ImagePickerModal';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
   const [selectedIndex, setSelectedItem] = useState(0);
-  const [multiImages , setMultiImages]=useState([require('../Assets/Images/man1.jpg'),require('../Assets/Images/dummyUser.png'),require('../Assets/Images/dummyUser1.png')])
+  const [showMultiImageModal, setShowMultiImageModal] = useState(false);
+  const [multiImages, setMultiImages] = useState([
+    {
+      uri: "https://images.unsplash.com/photo-1571501679680-de32f1e7aad4",
+      id : 'a',
+    },
+    {
+      uri: "https://images.unsplash.com/photo-1573273787173-0eb81a833b34",
+      id : 'b',
+    },
+    {
+      uri: "https://images.unsplash.com/photo-1569569970363-df7b6160d111",
+      id : 'c',
+    },
+   
+  ]);
   return (
     <>
       <CustomStatusBar
@@ -95,7 +111,7 @@ const HomeScreen = () => {
             width={windowWidth * 0.2}
             height={windowHeight * 0.035}
             // marginTop={moderateScale(10, 0.3)}
-            onPress={() => {}}
+            onPress={() => {setShowMultiImageModal(true)}}
             bgColor={Color.themeColorLight}
             borderWidth={0}
             borderRadius={moderateScale(30, 0.3)}
@@ -103,10 +119,16 @@ const HomeScreen = () => {
           />
         </View>
       </View>
-     <AddImagesContainer 
-     multiImages={multiImages}
-     setMultiImages={setMultiImages}
-     />
+      <AddImagesContainer
+        multiImages={multiImages}
+        setMultiImages={setMultiImages}
+        numberOfRows={3}
+      />
+       <ImagePickerModal
+        show={showMultiImageModal}
+        setShow={setShowMultiImageModal}
+        setMultiImages={setMultiImages}
+      />
     </>
   );
 };
@@ -116,7 +138,7 @@ export default HomeScreen;
 const styles = ScaledSheet.create({
   upperContainer: {
     backgroundColor: Color.white,
-    paddingVertical: moderateScale(20, 0.3),
+    paddingVertical: moderateScale(20, 0.6),
     width: windowWidth,
     alignItems: 'center',
   },

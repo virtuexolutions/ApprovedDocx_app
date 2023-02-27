@@ -62,7 +62,7 @@ const Signup = () => {
             textAlign: 'center',
             fontSize: moderateScale(33, 0.3),
           }}>
-          Sign Up!
+          Sign Up
         </CustomText>
         {/* <ShakingText 
         ref={(ref)=>{setTextRef(ref)}}
@@ -101,7 +101,8 @@ const Signup = () => {
                 name="pencil"
                 as={FontAwesome}
                 style={styles.icon2}
-                color={Color.white}
+                color={Color.black}
+                
                 size={moderateScale(16, 0.3)}
               />
             </TouchableOpacity>
@@ -283,7 +284,7 @@ const styles = StyleSheet.create({
     // marginTop: moderateScale(2.5, 0.3),
   },
   edit: {
-    backgroundColor: Color.blue,
+    backgroundColor: '#EEEEEE',
     width: moderateScale(25, 0.3),
     height: moderateScale(25, 0.3),
     position: 'absolute',
